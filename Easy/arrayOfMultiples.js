@@ -11,8 +11,17 @@ Notes
 Notice that num is also included in the returned array.
 */
 
-function arrayOfMultiples(/*args*/) {
-  //your code
-}
+const { ceil } = require("lodash");
+
+function arrayOfMultiples(num,length) {
+  let myArray=[];
+  for(let i=1;i<=length;i++)
+  {
+    myArray.push(num*i)
+  }
+  // return myArray;
+  }
+
+console.log(arrayOfMultiples(17,6));
 
 exports.solution = arrayOfMultiples;
