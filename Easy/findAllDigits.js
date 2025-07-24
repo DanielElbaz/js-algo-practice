@@ -15,8 +15,9 @@ Notes
 The digits can be discovered in any order.
 */
 
-function findAllDigits( /*args*/ ) {
+function findAllDigits(arr) {
   //your code
+
 }
 
 exports.solution = findAllDigits;

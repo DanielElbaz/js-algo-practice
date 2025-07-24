@@ -35,8 +35,23 @@ champions([
 ➞ "Manchester United"
 */
 
-function champions( /*args*/ ) {
-  //your code
+function champions(arr) {
+  const arr1 = []
+
+  for (const element of arr) {
+    let total = 3 * element.wins + 0 * element.loss + element.draws
+    let difference = element.scored - element.conceded
+    arr1.push([element.name, total, difference]) // arr1=[[chelsea,95,36],[manU,98,29]]
+  }
+
+  arr1.sort((a, b) => b[1] - a[1])
+
+  const arr2 = arr1.filter((element) => element[1] === arr1[0][1])
+  
+  if (arr2.length === 1) return arr1[0][0]
+
+  arr2.sort((a, b) => b[2] - a[2])
+  return arr2[0][0]
 }
 
 exports.solution = champions;

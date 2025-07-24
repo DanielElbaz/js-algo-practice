@@ -13,8 +13,14 @@ The array may contain duplicates.
 Multiple solutions can exist, any solution is sufficient to return true.
 */
 
-function canPartition( /*args*/ ) {
-  //your code
+function canPartition(myArray) {
+  const totalProduct = myArray.reduce((acc, val) => acc * val, 1);
+  for (let i = 0; i < myArray.length; i++) {
+    if (myArray[i] === totalProduct / myArray[i]) {
+      return true;
+    }
+  }
+  return false;
 }
 
 exports.solution = canPartition;

@@ -30,8 +30,26 @@ Notes
 All inputs are strings, no uppercases and all output must be strings.
 */
 
-function encrypt( /*args*/ ) {
+function encrypt(text) {
   //your code
+  const chart = {
+    a: 0,
+    e: 1,
+    i: 2,
+    o: 2,
+    u: 3
+  }
+  let result = '';
+  const reversedText = text.split('').reverse().join('')
+
+  for (let char of reversedText) {
+    if (char in chart) {
+      result += chart[char]
+    } else {
+      result += char
+    }
+  }
+  return result + 'aca'
 }
 
 exports.solution = encrypt;
