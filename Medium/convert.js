@@ -12,8 +12,22 @@ Round to the nearest integer.
 If the input is incorrect, return "Error".
 */
 
-function convert( /*args*/ ) {
+
+
+function convert(str) {
   //your code
+  let splicedStr = parseFloat(str.slice(0, -2));
+
+  if (str.endsWith('C')) {
+    splicedStr = (splicedStr * 9 / 5) + 32;
+    return(`${Math.round(splicedStr)}°F`)
+
+  } else if (str.endsWith('F')) {
+    splicedStr = (splicedStr - 32) * 5 / 9;
+    return(`${Math.round(splicedStr)}°C`)
+
+  } else return("Error")
+  
 }
 
 exports.solution = convert;
